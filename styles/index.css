@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+.navigation {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.btn {
+  padding: 10px 25px;
+  background-color: hsl(120, 100%, 25%);
+}
