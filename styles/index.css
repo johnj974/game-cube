@@ -1,13 +1,52 @@
 * {
   box-sizing: border-box;
+  background-color: green;
+  margin: 0;
+  padding: 0;
 }
 
-.navigation {
-  width: 90%;
-  margin: 0 auto;
+body {
+  text-align: center;
+}
+
+h1 {
+  font-size: 80px;
 }
 
 .btn {
-  padding: 10px 25px;
-  background-color: hsl(120, 100%, 25%);
+  padding: 20px 0;
+  width: 80%;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 60px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.blackjack {
+  background-color: hsl(347, 100%, 25%);
+  color: hsl(0, 0%, 0%);
+  border-top: 2px solid hsl(0, 0%, 0%);
+  border-bottom: 2px solid hsl(0, 0%, 0%);
+}
+
+.blackjack:hover {
+  color: hsl(347, 100%, 25%);
+  background-color: hsl(0, 0%, 0%);
+  border-top: 2px solid hsl(347, 100%, 25%);
+  border-bottom: 2px solid hsl(347, 100%, 25%);
+}
+
+.dice {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(0, 0%, 0%);
+  border-top: 2px solid hsl(0, 0%, 100%);
+  border-bottom: 2px solid hsl(0, 0%, 100%);
+}
+
+.dice:hover {
+  color: hsl(0, 0%, 0%);
+  background-color: hsl(0, 0%, 100%);
+  border-top: 2px solid hsl(0, 0%, 0%);
+  border-bottom: 2px solid hsl(0, 0%, 0%);
 }
