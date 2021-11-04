@@ -12,14 +12,27 @@
       <h1>BlackJack</h1>
       <h1><a href="index.html">Return to Lobby</a></h1>
     </div>
-    <div class="card-display">
-      <div class="card">
-        <h2 class="value"></h2>
-        <h2 class="suit"></h2>
+    <section class="table">
+      <div class="card-display">
+        <div class="card">
+          <h2 class="value"></h2>
+          <h2 class="suit"></h2>
+        </div>
       </div>
-    </div>
-    <button id="deal-btn">Deal Card</button>
+      <div class="dealer-card-display">
+        <div class="dealer-card">
+          <h2 class="dealer-value"></h2>
+          <h2 class="dealer-suit"></h2>
+        </div>
+      </div>
+    </section>
+    <section class="actions">
+      <button id="deal-btn">Deal Card</button>
+      <button id="reset-btn">New Game</button>
+      <button id="hold-btn">Hold</button>
+    </section>
     <p id="total"></p>
+    <p id="dealer-total"></p>
     <script src="scripts/blackjack.js"></script>
   </body>
 </html>
