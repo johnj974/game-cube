@@ -2,6 +2,8 @@
 const dealBtn = document.querySelector("#deal-btn");
 const resetBtn = document.querySelector("#reset-btn");
 const holdBtn = document.querySelector("#hold-btn");
+const dealerBtn = document.querySelector("#dealer-btn");
+let message = document.querySelector("#message");
 let acesHigh = false;
 // ---------------------------------------------------------------
 // Player
@@ -20,6 +22,15 @@ let dealerValue = document.querySelector(".dealer-value");
 let dealerSuit = document.querySelector(".dealer-suit");
 let dealerTotals = 0;
 // ---------------------------------------------------------------
+// Cards
+const drawCard = () => {
+  let dealtCard = Math.floor(Math.random() * 13) + 1;
+  if (dealtCard > 10) {
+    dealtCard = 10;
+  }
+  return dealtCard;
+};
+//----------------------------------------------------------------
 // Player functions
 const dealCard = () => {
   let suits = ["♥", "♦", "♠", "♣"];
@@ -31,20 +42,17 @@ const dealCard = () => {
     card.style.border = "3px solid black";
     suit.style.color = "black";
   }
-  let randomCard = Math.floor(Math.random() * 13) + 1;
+
+  let randomCard = drawCard();
   value.textContent = randomCard;
   suit.textContent = randomSuit;
   total += randomCard;
   playerTotal.textContent = total;
-};
-
-const reset = () => {
-  total = null;
-  value.textContent = null;
-  suit.textContent = null;
-  card.style.border = "3px solid green";
-  playerTotal.textContent = total;
-  dealBtn.style.display = "inline-block";
+  if (total > 21) {
+    message.textContent = "You Lose";
+  } else if (total === 21) {
+    message.textContent = "BlackJack";
+  }
 };
 
 const hold = () => {
@@ -62,26 +70,41 @@ const houseCard = () => {
     dealerCard.style.border = "3px solid black";
     dealerSuit.style.color = "black";
   }
-  let randomCard = Math.floor(Math.random() * 13) + 1;
+  let randomCard = drawCard();
   dealerValue.textContent = randomCard;
   dealerSuit.textContent = randomSuit;
   dealerTotals += randomCard;
   dealerTotal.textContent = dealerTotals;
+  if (dealerTotals > 21) {
+    message.textContent = "Dealer Loses";
+  }
 };
 
 const dealerCards = () => {
   houseCard();
 };
 
+const reset = () => {
+  total = null;
+  dealerTotals = null;
+  value.textContent = null;
+  dealerValue.textContent = null;
+  suit.textContent = null;
+  dealerSuit.textContent = null;
+  card.style.border = "3px solid green";
+  dealerCard.style.border = "3px solid green";
+  playerTotal.textContent = total;
+  dealerTotal.textContent = dealerTotals;
+  dealBtn.style.display = "inline-block";
+  message.textContent = null;
+};
+
 // ---------------------------------------------------------------
-// Event Listeners
-dealBtn.addEventListener("click", () => {
-  cardDisplay.textContent = dealCard();
-});
+
+dealBtn.addEventListener("click", dealCard);
 
 resetBtn.addEventListener("click", reset);
 
-holdBtn.addEventListener("click", () => {
-  dealerCards();
-  hold();
-});
+holdBtn.addEventListener("click", hold);
+
+dealerBtn.addEventListener("click", dealerCards);
