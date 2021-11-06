@@ -1,10 +1,15 @@
+//
+let acesHigh = false;
+let message = document.querySelector("#message");
+let aceMessage = document.querySelector("#aces");
+
 // Buttons
 const dealBtn = document.querySelector("#deal-btn");
 const resetBtn = document.querySelector("#reset-btn");
 const holdBtn = document.querySelector("#hold-btn");
+const acesBtn = document.querySelector("#aces-btn");
 const dealerBtn = document.querySelector("#dealer-btn");
-let message = document.querySelector("#message");
-let acesHigh = false;
+
 // ---------------------------------------------------------------
 // Player
 const cardDisplay = document.querySelector("#card-display");
@@ -27,6 +32,11 @@ const drawCard = () => {
   let dealtCard = Math.floor(Math.random() * 13) + 1;
   if (dealtCard > 10) {
     dealtCard = 10;
+  }
+  if (dealtCard === 1 && acesHigh === false) {
+    dealtCard = 1;
+  } else if (dealtCard === 1 && acesHigh === true) {
+    dealtCard = 11;
   }
   return dealtCard;
 };
@@ -99,6 +109,15 @@ const reset = () => {
   message.textContent = null;
 };
 
+const aceValue = () => {
+  acesHigh = !acesHigh;
+  if (acesHigh === false) {
+    aceMessage.textContent = "Aces are low";
+  } else {
+    aceMessage.textContent = "Aces are High";
+  }
+};
+
 // ---------------------------------------------------------------
 
 dealBtn.addEventListener("click", dealCard);
@@ -108,3 +127,5 @@ resetBtn.addEventListener("click", reset);
 holdBtn.addEventListener("click", hold);
 
 dealerBtn.addEventListener("click", dealerCards);
+
+acesBtn.addEventListener("click", aceValue);
