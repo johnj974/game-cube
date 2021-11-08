@@ -1,3 +1,38 @@
 body {
   background-color: red;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: green;
+  margin-bottom: 1%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.display {
+  display: flex;
+  justify-content: space-around;
+}
+
+.playerOne {
+  display: inline-block;
+  background-color: green;
+  width: 30%;
+}
+
+.playerTwo {
+  display: inline-block;
+  background-color: grey;
+  width: 30%;
+}
+
+#rollDice {
+  padding: 20px 50px;
+  font-size: 30px;
+  font-weight: 900;
 }
