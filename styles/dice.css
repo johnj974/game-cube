@@ -34,13 +34,16 @@ a {
   text-align: center;
 }
 
-#roll-dice {
+#roll-dice,
+#reset-btn,
+#pass-btn {
   padding: 20px 50px;
   font-size: 30px;
   font-weight: 900;
 }
 
-#dice-display {
+#dice-display,
+#dice-display-two {
   font-size: 100px;
   margin: 0;
 }
