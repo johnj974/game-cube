@@ -17,22 +17,39 @@ a {
 .display {
   display: flex;
   justify-content: space-around;
+  height: 500px;
 }
 
-.playerOne {
+.player-one {
   display: inline-block;
   background-color: green;
   width: 30%;
+  text-align: center;
 }
 
-.playerTwo {
+.player-two {
   display: inline-block;
   background-color: grey;
   width: 30%;
+  text-align: center;
 }
 
-#rollDice {
+#roll-dice {
   padding: 20px 50px;
   font-size: 30px;
   font-weight: 900;
+}
+
+#dice-display {
+  font-size: 100px;
+  margin: 0;
+}
+
+.controls {
+  text-align: center;
+}
+
+.player-one-score,
+.player-two-score {
+  font-size: 40px;
 }

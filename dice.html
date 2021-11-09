@@ -13,12 +13,21 @@
       <h1><a href="index.html">Return to Lobby</a></h1>
     </div>
     <section class="display">
-      <div class="playerOne">player1</div>
-      <div class="playerTwo">player2</div>
+      <div class="player-one">
+        <h2>Player 1</h2>
+        <div class="player-one-score">0</div>
+        <p id="dice-display"></p>
+      </div>
+      <div class="player-two">
+        <h2>Player 2</h2>
+        <div class="player-two-score">0</div>
+        <p id="dice-display"></p>
+      </div>
     </section>
+
     <section class="controls">
       <div>
-        <button id="rollDice">Roll Dice</button>
+        <button id="roll-dice">Roll Dice</button>
       </div>
     </section>
     <script src="scripts/dice.js"></script>
