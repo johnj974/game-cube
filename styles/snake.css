@@ -8,3 +8,26 @@
 a {
   text-decoration: none;
 }
+
+.play-area {
+  text-align: center;
+}
+
+#grid {
+  display: flex;
+  flex-wrap: wrap;
+  height: 400px;
+  width: 400px;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+.square {
+  height: 10px;
+  width: 10px;
+  background-color: green;
+}
+
+.snake {
+  background-color: red;
+}
