@@ -5,9 +5,13 @@ const squares = [];
 
 //snake
 let snake = [2, 1, 0];
+let direction = 1;
+let width = 40;
+let snakeTimer = null;
 
 //buttons
 const startBtn = document.querySelector("#start-btn");
+const pauseBtn = document.querySelector("#pause-btn");
 
 //functions
 const createSquare = () => {
@@ -27,8 +31,30 @@ snake.forEach((index) => {
 
 const move = () => {
   const removedSquare = snake.pop();
-  squares[removedSquare].classList.remove("square");
-  console.log(removedSquare);
+  squares[removedSquare].classList.remove("snake");
+  snake.unshift(snake[0] + direction);
+  squares[snake[0]].classList.add("snake");
 };
 
 move();
+
+function control(event) {
+  if (event.key === "ArrowRight") {
+    direction = 1;
+  } else if (event.key === "ArrowUp") {
+    direction = -width;
+  } else if (event.key === "ArrowLeft") {
+    direction = -1;
+  } else if (event.key === "ArrowDown") {
+    direction = +width;
+  }
+}
+
+//event listeners
+document.addEventListener("keydown", control);
+startBtn.addEventListener("click", () => {
+  snakeTimer = setInterval(move, 500);
+});
+pauseBtn.addEventListener("click", () => {
+  clearInterval(snakeTimer);
+});
