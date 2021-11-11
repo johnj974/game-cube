@@ -30,10 +30,22 @@ snake.forEach((index) => {
 });
 
 const move = () => {
+  if (
+    (snake[0] % width === 1 && direction === -1) || //left
+    (snake[0] % width === 39 && direction === 1) || //right
+    (snake[0] - width < 0 && direction === -width) || //top
+    (snake[0] + width >= 1600 && direction === width) || //bottom
+    squares[snake[0] + direction].classList.contains("snake") //self
+  ) {
+    clearInterval(snakeTimer);
+    console.log("stopped");
+  }
+
   const removedSquare = snake.pop();
   squares[removedSquare].classList.remove("snake");
   snake.unshift(snake[0] + direction);
   squares[snake[0]].classList.add("snake");
+  // console.log(snake[0]);
 };
 
 move();
