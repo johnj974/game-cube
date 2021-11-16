@@ -50,6 +50,13 @@ const move = () => {
 
 move();
 
+const createFruit = () => {
+  let randomNumber = Math.floor(Math.random() * 1600) + 1;
+  squares[randomNumber].classList.add("apple");
+};
+
+createFruit();
+
 function control(event) {
   if (event.key === "ArrowRight") {
     direction = 1;

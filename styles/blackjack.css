@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 h1 {
   color: red;
   padding: 20px;
@@ -13,16 +17,27 @@ a {
 .table {
   display: flex;
   justify-content: space-around;
+  /* align-items: center; */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card-display,
+.dealer-card-display {
+  width: 40%;
 }
 
 .actions {
-  text-align: center;
+  display: flex;
+  /* justify-content: space-evenly; */
+  flex-direction: column;
+  /* flex-wrap: wrap; */
 }
 
 .card,
 .dealer-card {
   height: 250px;
-  width: 200px;
+  width: 100%;
   border: 3px solid green;
   text-align: center;
 }
@@ -35,20 +50,33 @@ a {
 }
 
 button {
-  padding: 20px 50px;
+  padding: 1rem 2rem;
   font-size: 18px;
   font-weight: 900;
   background-color: green;
   color: white;
   cursor: pointer;
   border: none;
-  margin: 20px;
+  margin-top: 1rem;
 }
 
-.card-display {
+/* .card-display {
   display: inline-block;
 }
 
 .dealer-card-display {
   display: inline-block;
+} */
+@media (min-width: 600px) {
+  .table {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .actions {
+    /* width: 50%;
+    margin: 0 auto; */
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

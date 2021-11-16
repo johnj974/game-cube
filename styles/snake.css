@@ -29,10 +29,14 @@ a {
 .square {
   height: 10px;
   width: 10px;
-  background-color: green;
+  /* background-color: green; */
   /* border: 1px solid black; */
 }
 
 .snake {
+  background-color: green;
+}
+
+.apple {
   background-color: red;
 }
