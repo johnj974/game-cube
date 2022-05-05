@@ -15,29 +15,35 @@
   </head>
   <body>
     <header>
-      <div>
+      <div class="border">
+        <a href="index.html">Return to Lobby</a>
         <h1>Guess The Number</h1>
         <p class="header-para">...between 1 and 20</p>
       </div>
     </header>
     <section class="number">
       <div>
-        <h2 class="display-number"></h2>
+        <h2 class="display-number border"></h2>
       </div>
     </section>
     <section class="game-area">
-      <div class="left-column">
+      <div class="left-column border">
         <input type="number" id="input-box" max="20" min="1" />
         <div>
           <button class="check-btn">Check</button>
         </div>
       </div>
-      <div class="right-column">
+      <div class="right-column border">
         <div class="score-box">
           <h3 class="message"></h3>
           <h3>Score: <span class="score"></span></h3>
           <h3>HighScore: <span class="high-score"></span></h3>
         </div>
+      </div>
+    </section>
+    <section class="play-again">
+      <div class="border">
+        <button>Play Again</button>
       </div>
     </section>
     <script src="scripts/numbers.js"></script>

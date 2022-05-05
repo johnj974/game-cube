@@ -1,4 +1,4 @@
-* {
+.border {
   border: 1px solid red;
 }
 
@@ -32,6 +32,19 @@ h3 {
   letter-spacing: 3px;
 }
 
+a {
+  color: white;
+  font-size: 25px;
+  text-decoration: none;
+
+  padding-left: 20px;
+  letter-spacing: 3px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .header-para {
   text-align: right;
   font-size: 25px;
@@ -51,7 +64,7 @@ h3 {
 }
 
 .score-box {
-  width: 60%;
+  width: 50%;
   text-align: left;
   margin: auto;
 }
@@ -61,6 +74,7 @@ h3 {
   font-family: inherit;
   font-size: 30px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 button {
@@ -69,4 +83,38 @@ button {
   font-family: inherit;
   padding: 20px 40px;
   cursor: pointer;
+}
+
+.play-again {
+  text-align: center;
+  margin-top: 20px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  .game-area {
+    flex-direction: column-reverse;
+  }
+  .left-column,
+  .right-column {
+    width: 100%;
+    text-align: center;
+  }
+  .score-box {
+    text-align: center;
+  }
+  .left-column {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  a {
+    padding-left: 0;
+  }
 }
