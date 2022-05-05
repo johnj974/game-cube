@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/numbers.css" />
+    <title>Numbers</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Guess The Number</h1>
+        <p class="header-para">...between 1 and 20</p>
+      </div>
+    </header>
+    <section class="number">
+      <div>
+        <h2 class="display-number"></h2>
+      </div>
+    </section>
+    <section class="game-area">
+      <div class="left-column">
+        <input type="number" id="input-box" max="20" min="1" />
+        <div>
+          <button class="check-btn">Check</button>
+        </div>
+      </div>
+      <div class="right-column">
+        <div class="score-box">
+          <h3 class="message"></h3>
+          <h3>Score: <span class="score"></span></h3>
+          <h3>HighScore: <span class="high-score"></span></h3>
+        </div>
+      </div>
+    </section>
+    <script src="scripts/numbers.js"></script>
+  </body>
+</html>
