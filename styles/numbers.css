@@ -1,5 +1,8 @@
-.border {
+.border-red {
   border: 1px solid red;
+}
+.border-blue {
+  border: 1px solid blue;
 }
 
 html {
@@ -46,10 +49,21 @@ a:hover {
 }
 
 .header-para {
-  text-align: right;
+  /* text-align: right; */
   font-size: 25px;
   letter-spacing: 3px;
   padding-right: 20px;
+}
+
+.sub-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sub-head p {
+  font-size: 25px;
+  letter-spacing: 3px;
+  padding-left: 20px;
 }
 
 .game-area {
@@ -83,6 +97,7 @@ button {
   font-family: inherit;
   padding: 20px 40px;
   cursor: pointer;
+  border: none;
 }
 
 .play-again {
@@ -113,8 +128,14 @@ input[type="number"]::-webkit-outer-spin-button {
     justify-content: space-around;
     align-items: center;
   }
-
   a {
     padding-left: 0;
+  }
+  .sub-head {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .left-column {
+    margin-top: 20px;
   }
 }
